@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-connectors/flink-connector-kinesis/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-quickstart/flink-quickstart-java/src/main/resources/archetype-resources/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-quickstart/flink-quickstart-scala/src/main/resources/archetype-resources/pom.xml" />
+        <option value="$PROJECT_DIR$/flink-end-to-end-tests/flink-streaming-kinesis-test/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State />
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>Ali-Check</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/flink-quickstart/flink-quickstart-scala/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/flink-quickstart/flink-quickstart-java/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="archetype-resources (1)" />
+        <module name="archetype-resources (2)" />
+        <module name="flink-annotations" />
+        <module name="flink-avro" />
+        <module name="flink-avro-confluent-registry" />
+        <module name="flink-bucketing-sink-test" />
+        <module name="flink-cep-scala_2.11" />
+        <module name="flink-cep_2.11" />
+        <module name="flink-cli-test_2.11" />
+        <module name="flink-clients_2.11" />
+        <module name="flink-confluent-schema-registry" />
+        <module name="flink-connector-cassandra_2.11" />
+        <module name="flink-connector-elasticsearch-base_2.11" />
+        <module name="flink-connector-elasticsearch2_2.11" />
+        <module name="flink-connector-elasticsearch5_2.11" />
+        <module name="flink-connector-elasticsearch6_2.11" />
+        <module name="flink-connector-elasticsearch_2.11" />
+        <module name="flink-connector-filesystem_2.11" />
+        <module name="flink-connector-kafka-0.10_2.11" />
+        <module name="flink-connector-kafka-0.11_2.11" />
+        <module name="flink-connector-kafka-0.8_2.11" />
+        <module name="flink-connector-kafka-0.9_2.11" />
+        <module name="flink-connector-kafka-base_2.11" />
+        <module name="flink-connector-kafka_2.11" />
+        <module name="flink-connector-kinesis_2.11" />
+        <module name="flink-connector-nifi_2.11" />
+        <module name="flink-connector-rabbitmq_2.11" />
+        <module name="flink-connector-twitter_2.11" />
+        <module name="flink-connector-wikiedits_2.11" />
+        <module name="flink-container_2.11" />
+        <module name="flink-core" />
+        <module name="flink-csv" />
+        <module name="flink-dataset-allround-test" />
+        <module name="flink-datastream-allround-test" />
+        <module name="flink-dist_2.11" />
+        <module name="flink-distributed-cache-via-blob-test_2.11" />
+        <module name="flink-docs" />
+        <module name="flink-e2e-test-utils" />
+        <module name="flink-elasticsearch1-test" />
+        <module name="flink-elasticsearch2-test" />
+        <module name="flink-elasticsearch5-test" />
+        <module name="flink-elasticsearch6-test" />
+        <module name="flink-end-to-end-tests-common" />
+        <module name="flink-examples-batch_2.11" />
+        <module name="flink-examples-streaming-state-machine_2.11" />
+        <module name="flink-examples-streaming-twitter_2.11" />
+        <module name="flink-examples-streaming_2.11" />
+        <module name="flink-examples-table_2.11" />
+        <module name="flink-fs-hadoop-shaded" />
+        <module name="flink-fs-tests_2.11" />
+        <module name="flink-gelly-examples_2.11" />
+        <module name="flink-gelly-scala_2.11" />
+        <module name="flink-gelly_2.11" />
+        <module name="flink-hadoop-compatibility_2.11" />
+        <module name="flink-hadoop-fs" />
+        <module name="flink-hbase_2.11" />
+        <module name="flink-hcatalog_2.11" />
+        <module name="flink-heavy-deployment-stress-test" />
+        <module name="flink-high-parallelism-iterations-test" />
+        <module name="flink-java" />
+        <module name="flink-jdbc_2.11" />
+        <module name="flink-json" />
+        <module name="flink-local-recovery-and-allocation-test" />
+        <module name="flink-mapr-fs" />
+        <module name="flink-mesos_2.11" />
+        <module name="flink-metrics-availability-test" />
+        <module name="flink-metrics-core" />
+        <module name="flink-metrics-datadog" />
+        <module name="flink-metrics-dropwizard" />
+        <module name="flink-metrics-graphite" />
+        <module name="flink-metrics-influxdb_2.11" />
+        <module name="flink-metrics-jmx_2.11" />
+        <module name="flink-metrics-prometheus_2.11" />
+        <module name="flink-metrics-reporter-prometheus-test" />
+        <module name="flink-metrics-slf4j" />
+        <module name="flink-metrics-statsd" />
+        <module name="flink-ml-uber_2.11" />
+        <module name="flink-ml_2.11" />
+        <module name="flink-optimizer_2.11" />
+        <module name="flink-orc_2.11" />
+        <module name="flink-oss-fs-hadoop" />
+        <module name="flink-parent-child-classloading-test-lib-package_2.11" />
+        <module name="flink-parent-child-classloading-test-program_2.11" />
+        <module name="flink-parquet" />
+        <module name="flink-python_2.11" />
+        <module name="flink-queryable-state-client-java_2.11" />
+        <module name="flink-queryable-state-runtime_2.11" />
+        <module name="flink-queryable-state-test_2.11" />
+        <module name="flink-quickstart-java" />
+        <module name="flink-quickstart-scala" />
+        <module name="flink-quickstart-test" />
+        <module name="flink-runtime-web_2.11" />
+        <module name="flink-runtime_2.11" />
+        <module name="flink-s3-fs-base" />
+        <module name="flink-s3-fs-hadoop" />
+        <module name="flink-s3-fs-presto" />
+        <module name="flink-scala-shell_2.11" />
+        <module name="flink-scala_2.11" />
+        <module name="flink-sequence-file" />
+        <module name="flink-shaded-curator" />
+        <module name="flink-shaded-hadoop2" />
+        <module name="flink-shaded-hadoop2-uber" />
+        <module name="flink-shaded-yarn-tests" />
+        <module name="flink-sql-client-test" />
+        <module name="flink-sql-client_2.11" />
+        <module name="flink-sql-connector-elasticsearch6_2.11" />
+        <module name="flink-sql-connector-kafka-0.10_2.11" />
+        <module name="flink-sql-connector-kafka-0.11_2.11" />
+        <module name="flink-sql-connector-kafka-0.9_2.11" />
+        <module name="flink-sql-connector-kafka_2.11" />
+        <module name="flink-state-evolution-test" />
+        <module name="flink-statebackend-rocksdb_2.11" />
+        <module name="flink-stream-sql-test_2.11" />
+        <module name="flink-stream-state-ttl-test" />
+        <module name="flink-stream-stateful-job-upgrade-test" />
+        <module name="flink-streaming-file-sink-test" />
+        <module name="flink-streaming-java_2.11" />
+        <module name="flink-streaming-kafka-test-base_2.11" />
+        <module name="flink-streaming-kafka-test_2.11" />
+        <module name="flink-streaming-kafka010-test_2.11" />
+        <module name="flink-streaming-kafka011-test_2.11" />
+        <module name="flink-streaming-kinesis-test_2.11" />
+        <module name="flink-streaming-python_2.11" />
+        <module name="flink-streaming-scala_2.11" />
+        <module name="flink-swift-fs-hadoop" />
+        <module name="flink-table-api-java" />
+        <module name="flink-table-api-java-bridge_2.11" />
+        <module name="flink-table-api-scala-bridge_2.11" />
+        <module name="flink-table-api-scala_2.11" />
+        <module name="flink-table-common" />
+        <module name="flink-table-planner_2.11" />
+        <module name="flink-table-uber_2.11" />
+        <module name="flink-test-utils-junit" />
+        <module name="flink-test-utils_2.11" />
+        <module name="flink-tests_2.11" />
+        <module name="flink-yarn-tests_2.11" />
+        <module name="flink-yarn_2.11" />
+        <module name="force-shading" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="flink-annotations" options="-Xpkginfo:always" />
+      <module name="flink-avro" options="-Xpkginfo:always" />
+      <module name="flink-avro-confluent-registry" options="-Xpkginfo:always" />
+      <module name="flink-bucketing-sink-test" options="-Xpkginfo:always" />
+      <module name="flink-cep-scala_2.11" options="-Xpkginfo:always" />
+      <module name="flink-cep_2.11" options="-Xpkginfo:always" />
+      <module name="flink-cli-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-clients_2.11" options="-Xpkginfo:always" />
+      <module name="flink-confluent-schema-registry" options="-Xpkginfo:always" />
+      <module name="flink-connector-cassandra_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-elasticsearch-base_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-elasticsearch2_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-elasticsearch5_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-elasticsearch6_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-elasticsearch_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-filesystem_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka-0.10_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka-0.11_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka-0.8_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka-0.9_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka-base_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kafka_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-kinesis_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-nifi_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-rabbitmq_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-twitter_2.11" options="-Xpkginfo:always" />
+      <module name="flink-connector-wikiedits_2.11" options="-Xpkginfo:always" />
+      <module name="flink-container_2.11" options="-Xpkginfo:always" />
+      <module name="flink-core" options="-Xpkginfo:always" />
+      <module name="flink-csv" options="-Xpkginfo:always" />
+      <module name="flink-dataset-allround-test" options="-Xpkginfo:always" />
+      <module name="flink-datastream-allround-test" options="-Xpkginfo:always" />
+      <module name="flink-dist_2.11" options="-Xpkginfo:always" />
+      <module name="flink-distributed-cache-via-blob-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-docs" options="-Xpkginfo:always" />
+      <module name="flink-e2e-test-utils" options="-Xpkginfo:always" />
+      <module name="flink-elasticsearch1-test" options="-Xpkginfo:always" />
+      <module name="flink-elasticsearch2-test" options="-Xpkginfo:always" />
+      <module name="flink-elasticsearch5-test" options="-Xpkginfo:always" />
+      <module name="flink-elasticsearch6-test" options="-Xpkginfo:always" />
+      <module name="flink-end-to-end-tests-common" options="-Xpkginfo:always" />
+      <module name="flink-examples-batch_2.11" options="-Xpkginfo:always" />
+      <module name="flink-examples-streaming-state-machine_2.11" options="-Xpkginfo:always" />
+      <module name="flink-examples-streaming-twitter_2.11" options="-Xpkginfo:always" />
+      <module name="flink-examples-streaming_2.11" options="-Xpkginfo:always" />
+      <module name="flink-examples-table_2.11" options="-Xpkginfo:always" />
+      <module name="flink-fs-hadoop-shaded" options="-Xpkginfo:always" />
+      <module name="flink-fs-tests_2.11" options="-Xpkginfo:always" />
+      <module name="flink-gelly-examples_2.11" options="-Xpkginfo:always" />
+      <module name="flink-gelly-scala_2.11" options="-Xpkginfo:always" />
+      <module name="flink-gelly_2.11" options="-Xpkginfo:always" />
+      <module name="flink-hadoop-compatibility_2.11" options="-Xpkginfo:always" />
+      <module name="flink-hadoop-fs" options="-Xpkginfo:always" />
+      <module name="flink-hbase_2.11" options="-Xpkginfo:always" />
+      <module name="flink-hcatalog_2.11" options="-Xpkginfo:always" />
+      <module name="flink-heavy-deployment-stress-test" options="-Xpkginfo:always" />
+      <module name="flink-high-parallelism-iterations-test" options="-Xpkginfo:always" />
+      <module name="flink-java" options="-Xpkginfo:always" />
+      <module name="flink-jdbc_2.11" options="-Xpkginfo:always" />
+      <module name="flink-json" options="-Xpkginfo:always" />
+      <module name="flink-local-recovery-and-allocation-test" options="-Xpkginfo:always" />
+      <module name="flink-mapr-fs" options="-Xpkginfo:always" />
+      <module name="flink-mesos_2.11" options="-Xpkginfo:always" />
+      <module name="flink-metrics-availability-test" options="-Xpkginfo:always" />
+      <module name="flink-metrics-core" options="-Xpkginfo:always" />
+      <module name="flink-metrics-datadog" options="-Xpkginfo:always" />
+      <module name="flink-metrics-dropwizard" options="-Xpkginfo:always" />
+      <module name="flink-metrics-graphite" options="-Xpkginfo:always" />
+      <module name="flink-metrics-influxdb_2.11" options="-Xpkginfo:always" />
+      <module name="flink-metrics-jmx_2.11" options="-Xpkginfo:always" />
+      <module name="flink-metrics-prometheus_2.11" options="-Xpkginfo:always" />
+      <module name="flink-metrics-reporter-prometheus-test" options="-Xpkginfo:always" />
+      <module name="flink-metrics-slf4j" options="-Xpkginfo:always" />
+      <module name="flink-metrics-statsd" options="-Xpkginfo:always" />
+      <module name="flink-ml-uber_2.11" options="-Xpkginfo:always" />
+      <module name="flink-ml_2.11" options="-Xpkginfo:always" />
+      <module name="flink-optimizer_2.11" options="-Xpkginfo:always" />
+      <module name="flink-orc_2.11" options="-Xpkginfo:always" />
+      <module name="flink-oss-fs-hadoop" options="-Xpkginfo:always" />
+      <module name="flink-parent-child-classloading-test-lib-package_2.11" options="-Xpkginfo:always" />
+      <module name="flink-parent-child-classloading-test-program_2.11" options="-Xpkginfo:always" />
+      <module name="flink-parquet" options="-Xpkginfo:always" />
+      <module name="flink-python_2.11" options="-Xpkginfo:always" />
+      <module name="flink-queryable-state-client-java_2.11" options="-Xpkginfo:always" />
+      <module name="flink-queryable-state-runtime_2.11" options="-Xpkginfo:always" />
+      <module name="flink-queryable-state-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-quickstart-java" options="-Xpkginfo:always" />
+      <module name="flink-quickstart-scala" options="-Xpkginfo:always" />
+      <module name="flink-quickstart-test" options="-Xpkginfo:always" />
+      <module name="flink-runtime-web_2.11" options="-Xpkginfo:always" />
+      <module name="flink-runtime_2.11" options="-Xpkginfo:always" />
+      <module name="flink-s3-fs-base" options="-Xpkginfo:always" />
+      <module name="flink-s3-fs-hadoop" options="-Xpkginfo:always" />
+      <module name="flink-s3-fs-presto" options="-Xpkginfo:always" />
+      <module name="flink-scala-shell_2.11" options="-Xpkginfo:always" />
+      <module name="flink-scala_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sequence-file" options="-Xpkginfo:always" />
+      <module name="flink-shaded-curator" options="-Xpkginfo:always" />
+      <module name="flink-shaded-hadoop2" options="-Xpkginfo:always" />
+      <module name="flink-shaded-hadoop2-uber" options="-Xpkginfo:always" />
+      <module name="flink-shaded-yarn-tests" options="-Xpkginfo:always" />
+      <module name="flink-sql-client-test" options="-Xpkginfo:always" />
+      <module name="flink-sql-client_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sql-connector-elasticsearch6_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sql-connector-kafka-0.10_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sql-connector-kafka-0.11_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sql-connector-kafka-0.9_2.11" options="-Xpkginfo:always" />
+      <module name="flink-sql-connector-kafka_2.11" options="-Xpkginfo:always" />
+      <module name="flink-state-evolution-test" options="-Xpkginfo:always" />
+      <module name="flink-statebackend-rocksdb_2.11" options="-Xpkginfo:always" />
+      <module name="flink-stream-sql-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-stream-state-ttl-test" options="-Xpkginfo:always" />
+      <module name="flink-stream-stateful-job-upgrade-test" options="-Xpkginfo:always" />
+      <module name="flink-streaming-file-sink-test" options="-Xpkginfo:always" />
+      <module name="flink-streaming-java_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-kafka-test-base_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-kafka-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-kafka010-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-kafka011-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-kinesis-test_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-python_2.11" options="-Xpkginfo:always" />
+      <module name="flink-streaming-scala_2.11" options="-Xpkginfo:always" />
+      <module name="flink-swift-fs-hadoop" options="-Xpkginfo:always" />
+      <module name="flink-table-api-java" options="-Xpkginfo:always" />
+      <module name="flink-table-api-java-bridge_2.11" options="-Xpkginfo:always" />
+      <module name="flink-table-api-scala-bridge_2.11" options="-Xpkginfo:always" />
+      <module name="flink-table-api-scala_2.11" options="-Xpkginfo:always" />
+      <module name="flink-table-common" options="-Xpkginfo:always" />
+      <module name="flink-table-planner_2.11" options="-Xpkginfo:always" />
+      <module name="flink-table-uber_2.11" options="-Xpkginfo:always" />
+      <module name="flink-test-utils-junit" options="-Xpkginfo:always" />
+      <module name="flink-test-utils_2.11" options="-Xpkginfo:always" />
+      <module name="flink-tests_2.11" options="-Xpkginfo:always" />
+      <module name="flink-yarn-tests_2.11" options="-Xpkginfo:always" />
+      <module name="flink-yarn_2.11" options="-Xpkginfo:always" />
+    </option>
+  </component>
+</project>
