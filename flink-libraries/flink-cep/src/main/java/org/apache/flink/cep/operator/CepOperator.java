@@ -32,11 +32,8 @@ import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.cep.EventComparator;
 import org.apache.flink.cep.functions.PatternProcessFunction;
 import org.apache.flink.cep.functions.TimedOutPartialMatchHandler;
-import org.apache.flink.cep.nfa.ComputationState;
-import org.apache.flink.cep.nfa.NFA;
+import org.apache.flink.cep.nfa.*;
 import org.apache.flink.cep.nfa.NFA.MigratedNFA;
-import org.apache.flink.cep.nfa.NFAState;
-import org.apache.flink.cep.nfa.NFAStateSerializer;
 import org.apache.flink.cep.nfa.aftermatch.AfterMatchSkipStrategy;
 import org.apache.flink.cep.nfa.compiler.NFACompiler;
 import org.apache.flink.cep.nfa.sharedbuffer.SharedBuffer;
@@ -64,11 +61,7 @@ import org.apache.flink.util.Preconditions;
 import javax.annotation.Nullable;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -265,11 +258,49 @@ public class CepOperator<IN, KEY, OUT>
 //		这个地方为所有的边transition设置了cepRuntimeContext
 		newNFA.open(cepRuntimeContext, new Configuration());
 //		覆盖
-		nfa.setStatesMap(newNFA.getStatesMap());
+		nfa = newNFA;
+//		清理以前的未完成的数据，以及共享缓存
+		cleanBeforeMatch();
+		cleanSharedBuffer();
+	}
+
+	/**
+	 * @Description: 用于清理以前未匹配完成的部分状态，并且用新逻辑初始化新的NFAstate
+	 * 中必须包含可能作为开始的所有未匹配状态，否则无法进行匹配，因为没有开始state作为初始匹配
+	 * @param: []
+	 * @return: void
+	 * @auther: greenday
+	 * @date: 2019/9/10 10:07
+	 */
+	private void cleanBeforeMatch() throws Exception {
 //		将原来的为匹配完全的状态清理
 		NFAState nfaState = getNFAState();
-		nfaState.getPartialMatches().remove();
-//		nfaState.setNewPartialMatches(new PriorityQueue<ComputationState>(NFAState.COMPUTATION_STATE_COMPARATOR));
+		Queue<ComputationState> partialMatches = nfaState.getPartialMatches();
+		partialMatches.clear();
+//		因为nfaState中的partialMatches为未匹配完成的下一个状态，但是初始化的时候就是所有的start状态，所以
+//		这里需要根据新逻辑初始化一个新的NFAstate，里面的partialMatches设置为新逻辑中可能作为start的所有作为
+//		下一个可匹配状态选择
+		Queue<ComputationState> startingStates = new LinkedList<>();
+		for (State<IN> state : nfa.getStatesMap().values()) {
+			if (state.isStart()) {
+//				这里创建了一个start状态
+				startingStates.add(ComputationState.createStartState(state.getName()));
+			}
+		}
+		for (ComputationState startingState : startingStates) {
+			partialMatches.add(startingState);
+		}
+	}
+
+	/**
+	 * @Description: 用于清理以前的共享缓存SharedBuffer
+	 * @param: []
+	 * @return: void
+	 * @auther: greenday
+	 * @date: 2019/9/10 10:53
+	 */
+	private void cleanSharedBuffer(){
+		partialMatches.clean();
 	}
 
 	@Override
@@ -277,6 +308,7 @@ public class CepOperator<IN, KEY, OUT>
 //		当数据触发新逻辑注入时，调用用户方法注入新逻辑
 		if (needChange(element)){
 			changeNFA();
+			return;
 		}
 
 		if (isProcessingTime) {

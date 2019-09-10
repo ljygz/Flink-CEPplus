@@ -68,6 +68,21 @@ public class SharedBuffer<V> {
 	/** The cache of sharedBufferNode. */
 	private Map<NodeId, Lockable<SharedBufferNode>> entryCache = new HashMap<>();
 
+	/**
+	 * @Description: 用于清理以前的状态
+	 * @param: []
+	 * @return: void
+	 * @auther: greenday
+	 * @date: 2019/9/10 10:42
+	 */
+	public void clean(){
+		eventsBuffer.clear();
+		eventsBufferCache.clear();
+		entryCache.clear();
+		eventsCount.clear();
+		entries.clear();
+	}
+
 	public SharedBuffer(KeyedStateStore stateStore, TypeSerializer<V> valueSerializer) {
 		this.eventsBuffer = stateStore.getMapState(
 			new MapStateDescriptor<>(
