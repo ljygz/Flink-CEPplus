@@ -4,7 +4,7 @@ import org.apache.flink.api.java.tuple.Tuple3;
 import org.apache.flink.cep.CEP;
 import org.apache.flink.cep.PatternStream;
 import org.apache.flink.cep.RichPatternSelectFunction;
-import org.apache.flink.cep.listern.CepListen;
+import org.apache.flink.cep.listern.CepListener;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.pattern.conditions.RichIterativeCondition;
 import org.apache.flink.streaming.api.TimeCharacteristic;
@@ -73,7 +73,7 @@ public class Driver {
 
 		PatternStream patternstream = patternStream
 //			更新逻辑
-			.registerListen(new CepListen<Tuple3<String, Long, String>>(){
+			.registerListener(new CepListener<Tuple3<String, Long, String>>(){
 				@Override
 				public Boolean needChange(Tuple3<String, Long, String> element) {
 					return element.f0.equals("change");

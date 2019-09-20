@@ -24,7 +24,7 @@ import org.apache.flink.api.java.typeutils.EitherTypeInfo;
 import org.apache.flink.api.java.typeutils.TypeExtractor;
 import org.apache.flink.cep.functions.PatternProcessFunction;
 import org.apache.flink.cep.functions.TimedOutPartialMatchHandler;
-import org.apache.flink.cep.listern.CepListen;
+import org.apache.flink.cep.listern.CepListener;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.datastream.SingleOutputStreamOperator;
@@ -51,8 +51,8 @@ import static org.apache.flink.util.Preconditions.checkNotNull;
  */
 public class PatternStream<T> {
 //	---------------
-	private Boolean hasListen = false;
-	private CepListen<T> cepListen = null;
+	private Boolean hasListener = false;
+	private CepListener<T> cepListener = null;
 	/**
 	 * @Description: 用于注册我们的监听cep规则变化的监听对象
 	 * @param: [cepListen]
@@ -60,9 +60,9 @@ public class PatternStream<T> {
 	 * @auther: greenday
 	 * @date: 2019/9/9 10:19
 	 */
-	public  PatternStream<T> registerListen(CepListen<T> cepListen){
-		this.cepListen = cepListen;
-		hasListen = true;
+	public  PatternStream<T> registerListener(CepListener<T> cepListener){
+		this.cepListener = cepListener;
+		hasListener = true;
 		return this;
 	}
 //	---------------
@@ -100,8 +100,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			patternProcessFunction.registerListening(cepListen);
+		if (hasListener){
+			patternProcessFunction.registerListener(cepListener);
 		}
 //		------------
 		final TypeInformation<R> returnType = TypeExtractor.getUnaryOperatorReturnType(
@@ -136,8 +136,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			patternProcessFunction.registerListening(cepListen);
+		if (hasListener){
+			patternProcessFunction.registerListener(cepListener);
 		}
 //		------------
 
@@ -198,8 +198,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 
@@ -291,8 +291,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 		return process(processFunction, outTypeInfo);
@@ -357,8 +357,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 
@@ -422,8 +422,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 		return process(processFunction, outTypeInfo);
@@ -514,8 +514,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 		return process(processFunction, outTypeInfo);
@@ -579,8 +579,8 @@ public class PatternStream<T> {
 //    这个方法会创建真正的nfafactory包含nfa.statue
 //	  先判断client端是否register了,然后就注入进去了
 //		------------
-		if (hasListen){
-			processFunction.registerListening(cepListen);
+		if (hasListener){
+			processFunction.registerListener(cepListener);
 		}
 //		------------
 		final SingleOutputStreamOperator<R> mainStream = process(processFunction, mainTypeInfo);

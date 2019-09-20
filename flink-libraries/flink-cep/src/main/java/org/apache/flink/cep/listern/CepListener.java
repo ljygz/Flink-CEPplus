@@ -4,7 +4,7 @@ import org.apache.flink.cep.pattern.Pattern;
 
 import java.io.Serializable;
 
-public interface CepListen<T> extends Serializable {
+public interface CepListener<T> extends Serializable {
 
 	/**
 	 * @Description: 留给用户判断当接受到元素的时候，是否需要更新CEP逻辑

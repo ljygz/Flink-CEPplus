@@ -20,7 +20,7 @@ package org.apache.flink.cep.functions;
 
 import org.apache.flink.annotation.PublicEvolving;
 import org.apache.flink.api.common.functions.AbstractRichFunction;
-import org.apache.flink.cep.listern.CepListen;
+import org.apache.flink.cep.listern.CepListener;
 import org.apache.flink.cep.pattern.Pattern;
 import org.apache.flink.cep.time.TimeContext;
 import org.apache.flink.util.Collector;
@@ -48,7 +48,7 @@ public abstract class PatternProcessFunction<IN, OUT> extends AbstractRichFuncti
 //	--------------------
 	private Boolean flagNeedListern = false;
 
-	private CepListen<IN> listern = null;
+	private CepListener<IN> listerner = null;
 
 	public Boolean getFlagNeedListern() {
 		return flagNeedListern;
@@ -60,16 +60,16 @@ public abstract class PatternProcessFunction<IN, OUT> extends AbstractRichFuncti
 	 * @auther: greenday
 	 * @date: 2019/9/9 10:28
 	 */
-	public void registerListening(CepListen<IN> listern){
+	public void registerListener(CepListener<IN> listerner){
 		flagNeedListern = true;
-		this.listern = listern;
+		this.listerner = listerner;
 	}
 	public Pattern getNewPattern(){
-		return listern.returnPattern();
+		return listerner.returnPattern();
 	}
 
 	public Boolean Needchange(IN element){
-		return listern.needChange(element);
+		return listerner.needChange(element);
 	}
 //	----------------------
 
