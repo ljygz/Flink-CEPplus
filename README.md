@@ -7,9 +7,9 @@
               动态修改和外部动态注入,目前已经实现了CEP逻辑动态注入，基于消息驱动逻
               辑修改，可以手动往source端注入特定消息实现细腻度控制逻辑注入感知     
 
-为Client端API中PatternStream添加方法registerListen(CepListen<T> cepListen)  注意必须在select方法之前调用
+为Client端API中PatternStream添加方法registerListener(CepListener<T> cepListener)  注意必须在select方法之前调用
 
-cepListen对象需要实现接口CepListen
+cepListener对象需要实现接口CepListener
 
 接口方法
 
