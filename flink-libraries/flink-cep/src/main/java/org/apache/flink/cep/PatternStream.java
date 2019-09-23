@@ -97,13 +97,7 @@ public class PatternStream<T> {
 	 *         function.
 	 */
 	public <R> SingleOutputStreamOperator<R> process(final PatternProcessFunction<T, R> patternProcessFunction) {
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			patternProcessFunction.registerListener(cepListener);
-		}
-//		------------
+
 		final TypeInformation<R> returnType = TypeExtractor.getUnaryOperatorReturnType(
 			patternProcessFunction,
 			PatternProcessFunction.class,
@@ -140,7 +134,6 @@ public class PatternStream<T> {
 			patternProcessFunction.registerListener(cepListener);
 		}
 //		------------
-
 
 		return builder.build(
 			outTypeInfo,
@@ -194,14 +187,6 @@ public class PatternStream<T> {
 
 		final PatternProcessFunction<T, R> processFunction =
 			fromSelect(builder.clean(patternSelectFunction)).build();
-
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
 
 		return process(processFunction, outTypeInfo);
 	}
@@ -288,13 +273,6 @@ public class PatternStream<T> {
 				.withTimeoutHandler(timedOutPartialMatchesTag, builder.clean(patternTimeoutFunction))
 				.build();
 
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
 		return process(processFunction, outTypeInfo);
 	}
 
@@ -354,14 +332,6 @@ public class PatternStream<T> {
 				.withTimeoutHandler(outputTag, builder.clean(patternTimeoutFunction))
 				.build();
 
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
-
 		final SingleOutputStreamOperator<R> mainStream = process(processFunction, mainTypeInfo);
 		final DataStream<L> timedOutStream = mainStream.getSideOutput(outputTag);
 
@@ -419,13 +389,6 @@ public class PatternStream<T> {
 			fromFlatSelect(builder.clean(patternFlatSelectFunction))
 				.build();
 
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
 		return process(processFunction, outTypeInfo);
 	}
 
@@ -511,13 +474,6 @@ public class PatternStream<T> {
 				.withTimeoutHandler(timedOutPartialMatchesTag, builder.clean(patternFlatTimeoutFunction))
 				.build();
 
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
 		return process(processFunction, outTypeInfo);
 	}
 
@@ -576,13 +532,6 @@ public class PatternStream<T> {
 				.withTimeoutHandler(outputTag, builder.clean(patternFlatTimeoutFunction))
 				.build();
 
-//    这个方法会创建真正的nfafactory包含nfa.statue
-//	  先判断client端是否register了,然后就注入进去了
-//		------------
-		if (hasListener){
-			processFunction.registerListener(cepListener);
-		}
-//		------------
 		final SingleOutputStreamOperator<R> mainStream = process(processFunction, mainTypeInfo);
 		final DataStream<L> timedOutStream = mainStream.getSideOutput(outputTag);
 		final TypeInformation<Either<L, R>> outTypeInfo = new EitherTypeInfo<>(timedOutTypeInfo, mainTypeInfo);
