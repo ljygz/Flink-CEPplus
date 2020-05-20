@@ -233,10 +233,10 @@ public class CepOperator<IN, KEY, OUT>
 	 * @auther: greenday
 	 * @date: 2019/9/9 15:51
 	 */
-	private boolean needChange(StreamRecord<IN> element){
+	private boolean needChange(IN element){
 		//获取用户对象
 		PatternProcessFunction<IN, OUT> userFunction = this.userFunction;
-		return userFunction.getFlagNeedListern() && userFunction.Needchange(element.getValue());
+		return userFunction.getFlagNeedListern() && userFunction.needchange(element);
 	}
 
 	/**
@@ -305,11 +305,6 @@ public class CepOperator<IN, KEY, OUT>
 
 	@Override
 	public void processElement(StreamRecord<IN> element) throws Exception {
-//		当数据触发新逻辑注入时，调用用户方法注入新逻辑
-		if (needChange(element)){
-			changeNFA();
-			return;
-		}
 
 		if (isProcessingTime) {
 			if (comparator == null) {
@@ -498,6 +493,11 @@ public class CepOperator<IN, KEY, OUT>
 	 * @param timestamp The timestamp of the event
 	 */
 	private void processEvent(NFAState nfaState, IN event, long timestamp) throws Exception {
+//		当数据触发新逻辑注入时，调用用户方法注入新逻辑
+		if (needChange(event)){
+			changeNFA();
+			return;
+		}
 		try (SharedBufferAccessor<IN> sharedBufferAccessor = partialMatches.getAccessor()) {
 			Collection<Map<String, List<IN>>> patterns =
 				nfa.process(sharedBufferAccessor, nfaState, event, timestamp, afterMatchSkipStrategy, cepTimerService);

@@ -14,7 +14,7 @@ import org.apache.flink.streaming.api.functions.AssignerWithPunctuatedWatermarks
 import org.apache.flink.streaming.api.watermark.Watermark;
 import org.apache.flink.streaming.api.windowing.time.Time;
 
-import javax.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -40,7 +40,7 @@ public class Driver {
 			, new Tuple3<String, Long, String>("g", 1000000006000L, "23")
 		).assignTimestampsAndWatermarks(new AssignerWithPunctuatedWatermarks<Tuple3<String, Long, String>>() {
 			long maxTimsStamp;
-			@Nullable
+
 			public Watermark checkAndGetNextWatermark(Tuple3<String, Long, String> stringLongStringTuple3, long l) {
 				return new Watermark(maxTimsStamp - 1000);
 			}

@@ -68,7 +68,7 @@ public abstract class PatternProcessFunction<IN, OUT> extends AbstractRichFuncti
 		return listerner.returnPattern();
 	}
 
-	public Boolean Needchange(IN element){
+	public Boolean needchange(IN element){
 		return listerner.needChange(element);
 	}
 //	----------------------
