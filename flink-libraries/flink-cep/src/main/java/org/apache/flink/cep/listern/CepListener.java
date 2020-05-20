@@ -21,5 +21,5 @@ public interface CepListener<T> extends Serializable {
 	 * @auther: greenday
 	 * @date: 2019/9/7 10:46
 	 */
-	Pattern<T,?> returnPattern();
+	Pattern<T,?> returnPattern(T flagElement);
 }

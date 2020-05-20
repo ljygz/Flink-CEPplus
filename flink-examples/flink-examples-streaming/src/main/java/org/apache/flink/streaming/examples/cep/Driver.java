@@ -79,7 +79,8 @@ public class Driver {
 					return element.f0.equals("change");
 				}
 				@Override
-				public Pattern returnPattern() {
+				public Pattern returnPattern(Tuple3<String, Long, String> flagElement) {
+					System.out.println("接收到flag数据:"+flagElement.toString()+"感知到切换逻辑");
 					Pattern<Tuple3<String, Long, String>, ?> pattern = Pattern
 						.<Tuple3<String, Long, String>>begin("start").where(new RichIterativeCondition<Tuple3<String, Long, String>>() {
 							@Override

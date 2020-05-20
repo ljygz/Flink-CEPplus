@@ -246,9 +246,9 @@ public class CepOperator<IN, KEY, OUT>
 	 * @auther: greenday
 	 * @date: 2019/9/9 15:54
 	 */
-	private void changeNFA()throws Exception{
+	private void changeNFA(IN flagElement)throws Exception{
 		Pattern pattern ;
-		pattern = userFunction.getNewPattern();
+		pattern = userFunction.getNewPattern(flagElement);
 		NFACompiler.NFAFactoryCompiler<IN> nfaFactoryCompiler = new NFACompiler.NFAFactoryCompiler<IN>((Pattern<IN,?>)pattern);
 		nfaFactoryCompiler.compileFactory();
 		boolean timeoutHandling = userFunction instanceof TimedOutPartialMatchHandler;
@@ -495,7 +495,7 @@ public class CepOperator<IN, KEY, OUT>
 	private void processEvent(NFAState nfaState, IN event, long timestamp) throws Exception {
 //		当数据触发新逻辑注入时，调用用户方法注入新逻辑
 		if (needChange(event)){
-			changeNFA();
+			changeNFA(event);
 			return;
 		}
 		try (SharedBufferAccessor<IN> sharedBufferAccessor = partialMatches.getAccessor()) {
